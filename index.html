@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GitHub Claw — مترجم الكود للعربي</title>
+<meta name="description" content="بوت يشرح لك كل تعديل على مستودع GitHub بالعربي المفهوم — للمبتدئين وللزبائن اللي ما بيفهموا بالبرمجة.">
+<style>
+:root{--bg:#0b0f14;--card:#121922;--ink:#e8eef6;--mut:#8ea0b4;--acc:#39d3a0;--acc2:#2f80ed;--line:#1e2a36}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 system-ui,"Segoe UI",Tahoma,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:28px 20px 80px}
+header{display:flex;align-items:center;gap:12px;padding:8px 0 40px}
+.logo{font-size:26px}
+nav{margin-inline-start:auto;display:flex;gap:18px;font-size:14px}
+nav a{color:var(--mut);text-decoration:none}
+h1{font-size:38px;line-height:1.35;margin:0 0 16px}
+h1 span{color:var(--acc)}
+.lead{font-size:19px;color:var(--mut);margin:0 0 26px;max-width:640px}
+.cta{display:inline-block;background:var(--acc);color:#04140f;font-weight:700;padding:14px 26px;border-radius:12px;text-decoration:none}
+.cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-inline-start:10px;font-weight:500}
+.row{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0}
+.demo{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:34px 0;font-size:15px}
+.demo .tag{color:var(--acc);font-size:13px;letter-spacing:.5px}
+.demo pre{white-space:pre-wrap;margin:10px 0 0;color:var(--mut);font-family:inherit;font-size:14.5px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:20px 0 40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.card h3{margin:0 0 8px;font-size:17px}
+.card p{margin:0;color:var(--mut);font-size:14.5px}
+.price h3{color:var(--acc)}
+.price .num{font-size:32px;font-weight:800;margin:6px 0 2px}
+.price ul{padding-inline-start:18px;color:var(--mut);font-size:14.5px;margin:10px 0 0}
+.price.best{border-color:var(--acc)}
+.badge{background:var(--acc);color:#04140f;font-size:12px;padding:2px 8px;border-radius:999px;font-weight:700}
+h2{font-size:26px;margin:48px 0 10px}
+.qa{border-top:1px solid var(--line);padding:16px 0}
+.qa b{display:block;margin-bottom:4px}
+.qa span{color:var(--mut);font-size:15px}
+footer{border-top:1px solid var(--line);margin-top:50px;padding-top:18px;color:var(--mut);font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo">🐙</div>
+  <div><b>GitHub Claw</b><br><small style="color:var(--mut)">مترجم الكود للعربي</small></div>
+  <nav><a href="#how">كيف يشتغل</a><a href="#price">الأسعار</a><a href="#faq">أسئلة</a></nav>
+</header>
+
+<h1>حدا عدّل كودك على GitHub؟<br><span>خلّي GitHub Claw يشرحلك شو صار بالعربي.</span></h1>
+<p class="lead">بوت بيراقب مستودعك، وكل تعديل جديد (Pull Request) بيكتب تحته تعليقاً بالعربي المفهوم: شو بيعمل، هل هو خطر، وشو لازم تعمل — بلا مصطلح واحد صعب. للمبتدئين، وللزبائن اللي موكلين مبرمجاً.</p>
+<div class="row">
+  <a class="cta" href="#price">جرّبه على مستودعك</a>
+  <a class="cta ghost" href="#how">شوف مثال حقيقي</a>
+</div>
+
+<div class="demo">
+  <div class="tag">اقتباس حقيقي من تعليق نشره البوت على Pull Request</div>
+  <pre>«هذا تحديث إصدارات مكتبات من روبوت آلي — ما بيغيّر كودك، بس بيرفع نسخة مكتبة جاهزة.»
+«الفحوص الآلية: فيها فشل (8 من 11).»
+«شو لازم تعمل: ما تدمج هلق. خلي صاحب التحديث يصلّح الفحوص، وبعدها إذا كل شي شغّال اعمل دمج.»</pre>
+</div>
+
+<h2 id="how">شو بيعمل بالضبط</h2>
+<div class="grid">
+  <div class="card"><h3>📝 يشرح كل PR</h3><p>شو تغيّر، بأي ملفات، وهل هو إضافة أو تنظيف أو تحديث مكتبات.</p></div>
+  <div class="card"><h3>⚠️ ينبّهك للخطر</h3><p>ملفات مفاتيح، تغيير مكتبات، فحوص فاشلة، أو تعديل بلا مراجعة بشرية.</p></div>
+  <div class="card"><h3>🔔 يلاحق كل شي</h3><p>إصدارات جديدة، commits، إشعارات ومراجعات — ملخّص بالعربي بدل 30 تنبيه.</p></div>
+  <div class="card"><h3>🧑‍🏫 بلا مصطلحات</h3><p>ما بيقول «dependency bump» — بيقول «حدّث مكتبة جاهزة وما لمّس كودك».</p></div>
+</div>
+
+<h2 id="price">الأسعار</h2>
+<p class="lead" style="font-size:16px">بدون بطاقة أول أسبوعين. توقف بضغطة.</p>
+<div class="grid">
+  <div class="card price">
+    <h3>تجربة</h3>
+    <div class="num">$0</div>
+    <p>مستودع عام واحد · 20 شرح/شهر</p>
+    <ul><li>تعليق على كل PR جديد</li><li>ملخّص أسبوعي بالعربي</li></ul>
+  </div>
+  <div class="card price best">
+    <h3>شخصي <span class="badge">الأكثر طلباً</span></h3>
+    <div class="num">$12<span style="font-size:14px;color:var(--mut)">/شهر</span></div>
+    <p>3 مستودعات (خاصة أو عامة)</p>
+    <ul><li>كل الميزات + شرح بالـ AI</li><li>رد على أسئلتك داخل الـ PR</li><li>تنبيهات تيليجرام</li></ul>
+  </div>
+  <div class="card price">
+    <h3>وكالة / شركة</h3>
+    <div class="num">$49<span style="font-size:14px;color:var(--mut)">/شهر</span></div>
+    <p>15 مستودعاً + تقرير للزبون</p>
+    <ul><li>تقرير شهري جاهز للإرسال للزبون</li><li>شرح بلغة «غير التقني»</li><li>دعم مباشر</li></ul>
+  </div>
+</div>
+<div class="row"><a class="cta" href="https://t.me/hermesnetcup_bot">اطلب التركيب الآن</a></div>
+
+<h2 id="faq">أسئلة سريعة</h2>
+<div class="qa"><b>هل بيعدّل كودي لحاله؟</b><span>لا. بيقرأ ويكتب تعليقات فقط — ما بيدمج ولا بيحذف شي.</span></div>
+<div class="qa"><b>شو بيحتاج مني؟</b><span>صلاحية قراءة على المستودع + كتابة تعليقات. تنشال بأي وقت من إعدادات GitHub.</span></div>
+<div class="qa"><b>بيشتغل على المستودعات الخاصة؟</b><span>نعم، بالخطة المدفوعة.</span></div>
+<div class="qa"><b>لغات ثانية غير العربي؟</b><span>نعم — التعليق بيطلع بلغة المستودع (عربي أو إنجليزي) حسب إعدادك.</span></div>
+
+<footer>GitHub Claw · يعمل على GitHub REST API · بياناتك ما تنباع ولا تنتقل لأي طرف ثالث.</footer>
+</div>
+</body>
+</html>
